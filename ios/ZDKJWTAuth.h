@@ -9,6 +9,7 @@
 }
 
 - (void)setUrl:(NSString *_Nullable) urlString;
+- (void)seToken:(NSString *_Nullable) NSString;
 - (void)getToken:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 
 @end

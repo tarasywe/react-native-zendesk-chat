@@ -16,20 +16,21 @@ import zendesk.chat.JwtAuthenticator;
 
 class JwtAuth implements JwtAuthenticator {
     private String alfZendeskJwtUrl;
+    private String authToken;
 
     OkHttpClient client = new OkHttpClient();
     final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
-    JwtAuth(String alfZendeskJwtUrl) {
+    JwtAuth(String alfZendeskJwtUrl, String authToken) {
         this.alfZendeskJwtUrl = alfZendeskJwtUrl;
+        this.authToken = authToken;
     }
 
     private void retrieveToken(final JwtCallback callback) throws IOException {
-
-        RequestBody body = RequestBody.create(JSON, "{}");
         Request request = new Request.Builder()
                 .url(alfZendeskJwtUrl)
-                .post(body)
+                .addHeader("Authorization", "Bearer " + authToken)
+                .get()
                 .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
