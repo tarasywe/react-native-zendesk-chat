@@ -6,6 +6,7 @@
 
 {
     NSString *AlfUrl;
+    NSString *AuthToken;
 }
 
 - (void)setUrl:(NSString *_Nullable) urlString;
