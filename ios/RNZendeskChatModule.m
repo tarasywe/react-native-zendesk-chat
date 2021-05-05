@@ -189,7 +189,7 @@ RCT_EXPORT_METHOD(init:(NSString *)zenDeskKey appId:(NSString *)appId token:(NSS
     [ZDKChat initializeWithAccountKey:zenDeskKey queue:dispatch_get_main_queue()];
     ZDKJWTAuth *authenticator = [ZDKJWTAuth new];
     [authenticator setUrl:appId];
-    [authenticator seToken:token];
+    [authenticator setToken:token];
     [ZDKChat.instance setIdentityWithAuthenticator:authenticator];
 }
 

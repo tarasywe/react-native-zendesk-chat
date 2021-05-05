@@ -172,9 +172,9 @@ public class RNZendeskChatModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void init(String key, String AlfZendeskJwtUrl) {
+    public void init(String key, String AlfZendeskJwtUrl, String AuthToken) {
         Chat.INSTANCE.init(mReactContext, key);
-        JwtAuthenticator jwtAuth = new JwtAuth(AlfZendeskJwtUrl);
+        JwtAuthenticator jwtAuth = new JwtAuth(AlfZendeskJwtUrl, AuthToken);
         Chat.INSTANCE.setIdentity(jwtAuth);
         Log.d(TAG, "Chat.INSTANCE was properly initialized from JS.");
     }
@@ -281,5 +281,5 @@ public class RNZendeskChatModule extends ReactContextBaseJavaModule {
             Log.e(TAG, "Could not load getCurrentActivity -- no UI can be displayed without it.");
         }
     }
-    
+
 }
