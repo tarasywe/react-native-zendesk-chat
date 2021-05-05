@@ -44,7 +44,7 @@ class JwtAuth implements JwtAuthenticator {
                 String jsonData = response.body().string();
                 try {
                     JSONObject Jobject = new JSONObject(jsonData);
-                    String zendesk_jwt = (String) Jobject.get("jwt");
+                    String zendesk_jwt = (String) Jobject.get("identity");
 
                     callback.onSuccess(zendesk_jwt);
 
