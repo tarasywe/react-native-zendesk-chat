@@ -85,6 +85,11 @@ declare module "react-native-zendesk-chat" {
 		 * Configure the token to start receiving Push Notifications
 		 */
 		registerPushToken: (token: string) => void;
+
+		/**
+		 * Dismiss the chat modal (only IOS)
+		 */
+		closeChat: () => void;
 	}
 
 	const RNZendeskChatModule: RNZendeskChatModuleImpl;

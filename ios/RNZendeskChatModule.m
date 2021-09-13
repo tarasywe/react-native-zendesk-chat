@@ -199,4 +199,10 @@ RCT_EXPORT_METHOD(registerPushToken:(NSString *)token) {
 	});
 }
 
+RCT_EXPORT_METHOD(closeChat) {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [RCTPresentedViewController() dismissViewControllerAnimated:YES completion:nil];
+    });
+}
+
 @end
