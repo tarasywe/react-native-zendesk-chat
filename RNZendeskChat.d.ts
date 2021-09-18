@@ -87,6 +87,11 @@ declare module "react-native-zendesk-chat" {
 		registerPushToken: (token: string) => void;
 
 		/**
+		 * Set primary color for chat bubbles / send button (Only IOS)
+		 */
+		setPrimaryColor: (hexColor: string) => void;
+
+		/**
 		 * Dismiss the chat modal (only IOS)
 		 */
 		closeChat: () => void;
